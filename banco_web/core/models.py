@@ -9,7 +9,6 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.db.models.signals import post_delete
 
 
-
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
     first_name = models.CharField(_('first name'), max_length=50)

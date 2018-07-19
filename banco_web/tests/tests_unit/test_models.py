@@ -14,7 +14,7 @@ def test_user():
 @pytest.mark.django_db(transaction=True)
 def test_user_error_len_password():
     with pytest.raises(ValueError):
-        user = core_models.User.objects.create_user(
+        core_models.User.objects.create_user(
             email='teste@teste.com.br', first_name='teste', last_name='testando',
             cpf='111.111.111-11', password='his'
         )
@@ -23,7 +23,7 @@ def test_user_error_len_password():
 @pytest.mark.django_db(transaction=True)
 def test_user_without_fields():
     with pytest.raises(ValueError):
-        user = core_models.User.objects.create_user(
+        core_models.User.objects.create_user(
             email='', first_name='', last_name='', cpf='', password=''
         )
 
@@ -63,7 +63,7 @@ def test_superuser():
 @pytest.mark.django_db(transaction=True)
 def test_superuser_error_len_password():
     with pytest.raises(ValueError):
-        user = core_models.User.objects.create_superuser(
+        core_models.User.objects.create_superuser(
             email='teste@teste.com.br', first_name='teste', last_name='testando',
             cpf='111.111.111-11', password='his'
         )
@@ -72,7 +72,7 @@ def test_superuser_error_len_password():
 @pytest.mark.django_db(transaction=True)
 def test_superuser_without_fields():
     with pytest.raises(ValueError):
-        user = core_models.User.objects.create_superuser(
+        core_models.User.objects.create_superuser(
             email='', first_name='', last_name='', cpf='', password=''
         )
 
