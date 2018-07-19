@@ -2,9 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+*migrations
+*.pytest_cache
 # C extensions
 *.so
+geckodriver.log
 
 # Distribution / packaging
 .Python
