@@ -27,9 +27,9 @@ class UserManager(BaseUserManager):
 
         if not password:
             raise ValueError(_('The password field is required'))
-        if len(password) < 6:
+        if len(password) < 8:
             raise ValueError(_(
-                'The password field must be at least 6 characters'
+                'The password field must be at least 8 characters'
             ))
 
     def create_user(self, email, first_name, last_name,
@@ -58,5 +58,6 @@ class UserManager(BaseUserManager):
         user.set_password(password)
         user.is_superuser = True
         user.is_admin = True
+        user.is_staff = True
         user.save()
         return user
