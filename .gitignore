@@ -8,6 +8,8 @@ __pycache__/
 *.so
 geckodriver.log
 .vscode
+media/*/*.png
+media/*/*.jpg
 
 # Distribution / packaging
 .Python
