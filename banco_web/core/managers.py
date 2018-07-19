@@ -1,4 +1,3 @@
-import re
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.base_user import BaseUserManager
 
@@ -11,7 +10,7 @@ class UserManager(BaseUserManager):
             raise ValueError(_('The cpf field is not valid'))
 
     def valid_fields(self, email, first_name, last_name,
-                    cpf, password, avatar=None):
+                     cpf, password, avatar=None):
         if not email:
             raise ValueError(_('The email field is required'))
 
@@ -47,8 +46,8 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
-    def create_superuser(self, email, first_name, last_name,
-                    cpf, password, avatar=None):
+    def create_superuser(self, email, first_name, last_name, cpf,
+                         password, avatar=None):
         self.valid_fields(
             email, first_name, last_name, cpf, password, avatar=None
         )

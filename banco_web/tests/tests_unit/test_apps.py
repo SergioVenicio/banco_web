@@ -1,4 +1,3 @@
-import pytest
 from banco_web.api.apps import ApiConfig
 from banco_web.core.apps import CoreConfig
 

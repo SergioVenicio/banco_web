@@ -7,6 +7,7 @@ from django.core.files.base import ContentFile
 def path():
     return 'banco_web/tests'
 
+
 @pytest.fixture
 def image_png(path):
     capa = open(path + '/image.png', 'rb').read()
